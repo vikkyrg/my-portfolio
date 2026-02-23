@@ -17,22 +17,24 @@ function Projects() {
         tech: ["React", "Tailwind", "Framer Motion"],
         gradient: "from-green-600 to-emerald-600",
         icon: "✨",
-        live: "👉 PASTE YOUR PORTFOLIO LIVE LINK HERE",
-        github: "https://github.com/vikkyrg"
+        github: "https://github.com/vikkyrg/my-portfolio"
     },
     {
-        title: "Admin Panel",
-        description: "Created an admin dashboard to manage content and data through secure, structured interfaces during internship development.",
-        tech: ["React", "Firebase", "Tailwind"],
-        gradient: "from-purple-600 to-pink-600",
-        icon: "🛠️"
+    title: "Admin Dashboard",
+    description:"Built an internal admin panel during internship to manage bookings, users, and service data. Developed structured components and handled real-time updates using React and Firebase.",
+    tech: ["React", "Firebase", "Tailwind"],
+    gradient: "from-purple-600 to-pink-600",
+    icon: "🛠️",
+    tag: "Internship"
     },
+
     {
-        title: "Dump & Drop",
-        description: "Developed responsive frontend features for a logistics and travel service platform, focusing on usability and clean UI implementation.",
-        tech: ["React", "Tailwind", "JavaScript"],
-        gradient: "from-orange-600 to-yellow-600",
-        icon: "🚗"
+    title: "Dump & Drop Platform",
+    description:"Worked on the customer-side logistics booking interface during internship. Implemented responsive UI, improved usability, and built workflow screens using React and Tailwind.",
+    tech: ["React", "JavaScript", "Tailwind"],
+    gradient: "from-orange-600 to-yellow-600",
+    icon: "🚗",
+    tag: "Internship"
     }
     ];
 
@@ -65,9 +67,15 @@ function Projects() {
                                     {project.icon}
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                                     {project.title}
                                 </h3>
+
+                                {project.tag && (
+                                    <span className="text-xs text-blue-300 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-inner shadow-white/5">
+                                        Internship Work
+                                    </span>
+                                )}
 
                                 <p className="text-gray-400 mb-6 flex-grow">
                                     {project.description}
@@ -89,18 +97,23 @@ function Projects() {
                                 {(project.live || project.github) && (
                                     <div className="flex gap-4 justify-center">
                                         
-                                        {project.live && (
-                                            <a
-                                                href={project.live}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors group/link"
-                                            >
-                                                <FiExternalLink className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                                                Live
-                                            </a>
+                                        {project.title === "Portfolio Website" ? (
+                                            <span className="flex items-center gap-1 text-blue-400 font-medium">
+                                            ● Active Project
+                                            </span>
+                                        ) : (
+                                            project.live && (
+                                                <a
+                                                    href={project.live}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors group/link"
+                                                >
+                                                    <FiExternalLink className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                                                    Live
+                                                </a>
+                                            )
                                         )}
-
                                         {project.github && (
                                             <a
                                                 href={project.github}
