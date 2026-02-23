@@ -93,7 +93,7 @@ function Hero() {
               overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
 
                 <img
-                  src="/quality.jpeg"
+                  src="/profile.jpeg"
                   alt="Vikky"
                   className="w-full h-full object-cover object-top"
                 />
