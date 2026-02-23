@@ -100,7 +100,7 @@ function Projects() {
                                         
                                         {project.title === "Portfolio Website" ? (
                                             <span className="flex items-center gap-1 text-blue-400 font-medium">
-                                            ● Active Project
+                                            ● Live on This Page
                                             </span>
                                         ) : (
                                             project.live && (
