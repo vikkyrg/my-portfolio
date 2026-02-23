@@ -20,21 +20,22 @@ function Projects() {
         github: "https://github.com/vikkyrg/my-portfolio"
     },
     {
-    title: "Admin Dashboard",
-    description:"Built an internal admin panel during internship to manage bookings, users, and service data. Developed structured components and handled real-time updates using React and Firebase.",
-    tech: ["React", "Firebase", "Tailwind"],
-    gradient: "from-purple-600 to-pink-600",
-    icon: "🛠️",
-    tag: "Internship"
+        title: "Admin Dashboard",
+        description:"Built an internal admin panel during internship to manage bookings, users, and service data. Developed structured components and handled real-time updates using React and Firebase.",
+        tech: ["React", "Firebase", "Tailwind"],
+        gradient: "from-purple-600 to-pink-600",
+        icon: "🛠️",
+        tag: "Internship",
+        github: "https://github.com/innomatricstech/EnjoyHolidays-Admin"
     },
 
     {
-    title: "Dump & Drop Platform",
-    description:"Worked on the customer-side logistics booking interface during internship. Implemented responsive UI, improved usability, and built workflow screens using React and Tailwind.",
-    tech: ["React", "JavaScript", "Tailwind"],
-    gradient: "from-orange-600 to-yellow-600",
-    icon: "🚗",
-    tag: "Internship"
+        title: "Dump & Drop Platform",
+        description:"Worked on the customer-side logistics booking interface during internship. Implemented responsive UI, improved usability, and built workflow screens using React and Tailwind.",
+        tech: ["React", "JavaScript", "Tailwind"],
+        gradient: "from-orange-600 to-yellow-600",
+        icon: "🚗",
+        tag: "Internship"
     }
     ];
 

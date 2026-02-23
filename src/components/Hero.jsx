@@ -61,7 +61,7 @@ function Hero() {
           <div className="mt-8 sm:mt-10 flex flex-row gap-3 sm:gap-6 justify-center md:justify-start animate-fade-in-up animation-delay-200">
             <a
               href="/resume.pdf"
-              download="Vikky_Resume.pdf"
+              download="Vignesh_Resume.pdf"
               className="group relative px-4 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg sm:rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 active:scale-95 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 cursor-pointer touch-manipulation"
               style={{ WebkitTapHighlightColor: "transparent" }}
             >
