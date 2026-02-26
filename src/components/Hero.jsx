@@ -19,7 +19,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`min-h-screen flex items-center justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 relative overflow-hidden overflow-x-hidden transition-all duration-1000 ${
+      className={`min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 relative overflow-hidden transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -88,17 +88,11 @@ function Hero() {
         <div className="flex justify-center md:justify-end relative mt-8 md:mt-0">
           
           {/* Background Aura */}
-          <div className="absolute pointer-events-none right-1/2 md:right-10 top-[45%] -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[80px] rounded-full animate-heroAura" />
+          <div className="absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura" />
 
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[420px] md:h-[420px] rounded-full">
-            
-            {/* Neon Ring */}
             <div className="absolute inset-0 pointer-events-none rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-md opacity-80 animate-pulse" />
-
-            {/* Outer Glow */}
             <div className="absolute inset-[-4px] sm:inset-[-6px] pointer-events-none rounded-full bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-400 blur-xl sm:blur-2xl opacity-60" />
-
-            {/* Glass Circle */}
             <div className="relative w-full h-full rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
               <img
                 src="/profile.jpeg"
