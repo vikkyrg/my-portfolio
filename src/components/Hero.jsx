@@ -88,7 +88,6 @@ function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end relative mt-8 md:mt-0">
-          <div className="absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura" />
 
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[420px] md:h-[420px] rounded-full">
             <div className="absolute inset-0 pointer-events-none rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-md opacity-80 animate-pulse" />
