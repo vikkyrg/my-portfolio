@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs, FaDatabase, FaJs, FaGitAlt } from "react-icons/fa";
 import { SiExpress, SiTailwindcss, SiMongodb } from "react-icons/si";
+import FadeIn from "./FadeIn";
 function Skills() {
     const skills = [
         { name: "React", icon: <FaReact className="text-blue-400" />, color: "from-blue-500/20 to-cyan-500/20" },
@@ -12,6 +13,7 @@ function Skills() {
         { name: "REST API", icon: <FaDatabase className="text-purple-400" />, color: "from-purple-500/20 to-pink-500/20" }
     ];
   return (
+    <FadeIn>
     <section id="skills" className="py-32 px-6 relative">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-5xl font-bold mb-4">
@@ -43,6 +45,7 @@ function Skills() {
 
         </div>
       </section>
+    </FadeIn>
   );
 }
   

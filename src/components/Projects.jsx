@@ -1,4 +1,5 @@
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import FadeIn from "./FadeIn";
 
 function Projects() {
     const projects = [
@@ -40,6 +41,7 @@ function Projects() {
     ];
 
     return (
+        <FadeIn>
         <section id="projects" className="py-32 px-6 relative">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-5xl font-bold mb-4">
@@ -136,6 +138,7 @@ function Projects() {
                 </div>
             </div>
         </section>
+        </FadeIn>
     );
 }
 

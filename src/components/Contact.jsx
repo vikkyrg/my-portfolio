@@ -1,6 +1,7 @@
 import { FiMail, FiGithub, FiLinkedin, FiCheckCircle, FiXCircle } from "react-icons/fi";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import FadeIn from "./FadeIn";
 
 function Contact() {
   const form = useRef();
@@ -38,6 +39,7 @@ const sendEmail = (e) => {
 };
 
   return (
+  <FadeIn>
   <section id="contact" className="py-32 px-6 relative">
     <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
@@ -260,6 +262,7 @@ const sendEmail = (e) => {
       }
     `}</style>
   </section>
+  </FadeIn>
  );
 }
 

@@ -1,7 +1,9 @@
 import { FiBriefcase } from "react-icons/fi";
+import FadeIn from "./FadeIn";
 
 function Internship() {
   return (
+    <FadeIn>
     <section id="internship" className="py-32 px-6 relative">
       <div className="max-w-4xl mx-auto">
 
@@ -96,6 +98,7 @@ function Internship() {
         </div>
       </div>
     </section>
+    </FadeIn>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FiMail, FiGithub, FiLinkedin, FiHeart, FiArrowUp } from "react-icons/fi";
+import FadeIn from "./FadeIn";
 
 function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -25,6 +26,7 @@ function Footer() {
   ];
 
   return (
+    <FadeIn>
     <footer className="relative border-t border-white/10 bg-gradient-to-b from-gray-900 to-black pt-16 pb-8 px-6 overflow-hidden">
       
       {/* Animated Background Blobs */}
@@ -251,6 +253,7 @@ function Footer() {
         }
       `}</style>
     </footer>
+    </FadeIn>
   );
 }
 
