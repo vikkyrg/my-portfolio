@@ -19,7 +19,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`min-h-[85vh] md:min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 pb-16 md:pb-0 relative overflow-hidden transition-all duration-1000 ${
+      className={`min-h-[85vh] md:min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 pb-16 md:pb-0 relative transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -40,7 +40,6 @@ function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10 w-full">
-        
         {/* LEFT SIDE */}
         <div className="relative mt-4 md:mt-10 max-w-2xl mx-auto md:mx-0 w-full">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
@@ -58,9 +57,8 @@ function Hero() {
             using React, Node.js, Express, and MongoDB.
           </p>
 
-          {/* DOWNLOAD BUTTON */}
+          {/* ✅ FIXED DOWNLOAD BUTTON */}
           <div className="mt-8 sm:mt-10 flex flex-row gap-3 sm:gap-6 justify-center md:justify-start animate-fade-in-up animation-delay-200">
-            
             <a
               href="/resume.pdf"
               download="Vignesh_Resume.pdf"
@@ -83,18 +81,15 @@ function Hero() {
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
-
           </div>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end relative mt-8 md:mt-0">
-
-          {/* Background Aura (REMOVED FROM MOBILE) */}
-          <div className="hidden md:block absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura" />
+          {/* Background Aura (no click blocking now) */}
+          <div className="absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura" />
 
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[420px] md:h-[420px] rounded-full">
-
             {/* Neon Ring */}
             <div className="absolute inset-0 pointer-events-none rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-md opacity-80 animate-pulse" />
 
@@ -106,22 +101,20 @@ function Hero() {
               <img
                 src="/profile.jpeg"
                 alt="Vikky"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top select-none"
                 loading="lazy"
               />
 
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-40" />
             </div>
-
           </div>
         </div>
-
       </div>
 
       {/* Animations */}
       <style jsx>{`
         @keyframes float {
-          0%,100% { transform: translateY(0px); }
+          0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
         }
         .animate-float { animation: float 3s ease-in-out infinite; }
