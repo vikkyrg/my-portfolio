@@ -1,11 +1,16 @@
 @import "tailwindcss";
-html {
+
+html, body {
   scroll-behavior: smooth;
-}
-body {
-  font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: #020617;
   color: white;
+  font-family: system-ui, sans-serif;
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  background: #020617;
 }
 @keyframes spin-slow {
   0% { transform: rotate(0deg); }
