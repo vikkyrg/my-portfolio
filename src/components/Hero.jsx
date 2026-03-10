@@ -19,12 +19,13 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`min-h-[85vh] md:min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 pb-16 md:pb-0 relative overflow-hidden transition-all duration-1000 ${
+      className={`min-h-[85vh] md:min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 pb-16 md:pb-0 relative isolate overflow-x-hidden overflow-clip transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
+      style={{ contain: "paint" }}
     >
       {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -57,7 +58,6 @@ function Hero() {
             using React, Node.js, Express, and MongoDB.
           </p>
 
-          {/* ✅ FIXED DOWNLOAD BUTTON */}
           <div className="mt-8 sm:mt-10 flex flex-row gap-3 sm:gap-6 justify-center md:justify-start animate-fade-in-up animation-delay-200">
             <a
               href="/resume.pdf"
@@ -86,8 +86,11 @@ function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="flex justify-center md:justify-end relative mt-8 md:mt-0">
-          {/* Background Aura (no click blocking now) */}
-          <div className="absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura" />
+          {/* Background Aura */}
+          <div
+            className="absolute pointer-events-none right-1/2 md:right-10 top-1/2 -translate-y-1/2 translate-x-1/2 md:translate-x-0 w-[280px] sm:w-[350px] md:w-[420px] h-[280px] sm:h-[350px] md:h-[420px] bg-gradient-to-tr from-blue-500/25 via-indigo-500/20 to-purple-500/25 blur-[100px] rounded-full animate-heroAura"
+            style={{ willChange: "transform" }}
+          />
 
           <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[420px] md:h-[420px] rounded-full">
             {/* Neon Ring */}
