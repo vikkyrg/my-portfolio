@@ -8,7 +8,7 @@ import Contact from "../components/Contact";
 
 function Home() {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       <Background />
       <Hero />
       <About />
