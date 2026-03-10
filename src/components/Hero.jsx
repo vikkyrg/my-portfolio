@@ -19,11 +19,13 @@ function Hero() {
   return (
     <section
       id="home"
-      /* FIXED: Changed 85vh to 85svh to stop mobile resizing glitch */
-      /* ADDED: isolate and overflow-clip to lock the blur inside */
+      /* FIXED: Changed 85vh to 85svh to stop the scroll-stretch glitch */
+      /* ADDED: overflow-clip and isolate to stop the purple blur bleed */
       className={`min-h-[85svh] md:min-h-screen flex items-start justify-center text-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-36 pb-16 md:pb-0 relative isolate overflow-hidden overflow-clip transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
+      /* FIXED: Forces the GPU to only paint the blur INSIDE this section */
+      style={{ contain: "paint" }}
     >
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
