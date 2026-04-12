@@ -22,16 +22,16 @@ function About() {
 
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                  MCA Final Year student with hands-on experience building full-stack web applications using the MERN stack,
-                  with a strong interest in understanding how real-world applications are designed, built, and scaled.
-                  My journey into development began with curiosity about how systems work behind the scenes,
-                  which gradually turned into a passion for creating complete, functional solutions.
+                  MCA graduate with hands-on experience building full-stack web applications using the MERN stack. 
+                  I have a strong interest in understanding how real-world applications are designed, built, and scaled. 
+                  My journey into development began with curiosity about how systems work behind the scenes, 
+                  which gradually evolved into a passion for creating complete, functional solutions.
                 </p>
 
                 <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                  I enjoy learning through hands-on projects, improving my problem-solving skills,
-                  and writing clean, maintainable code. My goal is to grow into a professional full-stack
-                  developer and contribute to real-world products and continuously improve as a full-stack developer.
+                  I enjoy learning through hands-on projects, continuously improving my problem-solving skills, 
+                  and writing clean, maintainable code. I am now seeking opportunities to contribute to real-world products
+                  and grow as a professional full-stack developer.
                 </p>
 
                 {/* Stats */}
@@ -88,10 +88,10 @@ function About() {
                 <div className="bg-gray-900/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/5 hover:border-blue-500/30 transition-all duration-300">
                   <h3 className="text-lg sm:text-2xl font-bold text-white">Master of Computer Applications</h3>
                   <p className="text-gray-400 mt-1 text-sm">Erode Arts and Science College</p>
-                  <p className="text-blue-400 mt-1 text-sm">2024 — 2026 · Final Year</p>
+                  <p className="text-blue-400 mt-1 text-sm">2024 — 2026 · Completed</p>
                   <div className="mt-3 flex flex-wrap items-center gap-3">
                     <span className="px-3 py-1 bg-blue-600/20 rounded-full text-xs sm:text-sm text-blue-400">CGPA: 7.6/10</span>
-                    <span className="text-gray-400 text-xs sm:text-sm">🎓 Pursuing</span>
+                    <span className="text-gray-400 text-xs sm:text-sm">🏆 Completed</span>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ function About() {
                   <p className="text-purple-400 mt-1 text-sm">2021 — 2024 · Completed</p>
                   <div className="mt-3 flex flex-wrap items-center gap-3">
                     <span className="px-3 py-1 bg-purple-600/20 rounded-full text-xs sm:text-sm text-purple-400">CGPA: 7.5/10</span>
-                    <span className="text-gray-400 text-xs sm:text-sm">🏆 Graduate</span>
+                    <span className="text-gray-400 text-xs sm:text-sm">🎓 Graduate</span>
                   </div>
                 </div>
               </div>
