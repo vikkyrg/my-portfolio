@@ -40,7 +40,7 @@ function Internship() {
                 <ul className="list-disc pl-6 text-gray-400 space-y-2 mt-4">
                     <li>Built structured web pages using HTML5, CSS3, and JavaScript</li>
                     <li>Developed responsive layouts using Flexbox and media queries</li>
-                    <li>Implemented interactive UI behavior with vanilla JavaScript</li>
+                    <li>Implemented interactive UI behavior with  JavaScript</li>
                     <li>Improved understanding of browser rendering and layout techniques</li>
                     <li>Collaborated on static website projects focusing on usability and design</li>
                 </ul>
