@@ -90,7 +90,7 @@ function About() {
                   <p className="text-gray-400 mt-1 text-sm">Erode Arts and Science College</p>
                   <p className="text-blue-400 mt-1 text-sm">2024 — 2026 · Completed</p>
                   <div className="mt-3 flex flex-wrap items-center gap-3">
-                    <span className="px-3 py-1 bg-blue-600/20 rounded-full text-xs sm:text-sm text-blue-400">CGPA: 7.6/10</span>
+                    <span className="px-3 py-1 bg-blue-600/20 rounded-full text-xs sm:text-sm text-blue-400">CGPA: 8.0/10</span>
                     <span className="text-gray-400 text-xs sm:text-sm">🏆 Completed</span>
                   </div>
                 </div>
