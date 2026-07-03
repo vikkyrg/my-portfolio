@@ -1,4 +1,4 @@
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiFileText, FiUsers, FiSliders, FiMonitor } from "react-icons/fi";
 import FadeIn from "./FadeIn";
 
 function Projects() {
@@ -7,8 +7,7 @@ function Projects() {
             title: "Resume Generator",
             description: "Built a full-stack resume builder with dynamic form handling, real-time preview, and PDF export using React, Node.js, Express, and MongoDB.",
             tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind"],
-            gradient: "from-blue-600 to-cyan-600",
-            icon: "📄",
+            icon: <FiFileText />,
             live: "https://resume-generator-opal-eta.vercel.app/",
             github: "https://github.com/vikkyrg/resume-generator"
         },
@@ -16,8 +15,7 @@ function Projects() {
             title: "CollabBoard SaaS",
             description: "Built a real-time collaboration platform with collaborative whiteboard, chat, video calling, AI assistance, and secure room-based collaboration.",
             tech: ["React", "Node.js", "Express.js", "Socket.IO", "MongoDB", "Fabric.js", "JWT", "Agora"],
-            gradient: "from-orange-500 to-red-600",
-            icon: "📋",
+            icon: <FiUsers />,
             live: "https://collabboard-saas.vercel.app/",
             github: "https://github.com/vikkyrg/CollabBoard-SaaS"
         },
@@ -25,8 +23,7 @@ function Projects() {
             title: "Admin Dashboard",
             description: "Built an internal admin panel during internship to manage bookings, users, and service data. Developed structured components and handled real-time updates using React and Firebase.",
             tech: ["React", "Firebase", "Tailwind"],
-            gradient: "from-purple-600 to-pink-600",
-            icon: "🛠️",
+            icon: <FiSliders />,
             tag: "Internship",
             github: "https://github.com/innomatricstech/EnjoyHolidays-Admin"
         },
@@ -34,105 +31,98 @@ function Projects() {
             title: "Portfolio Website",
             description: "Designed and developed a responsive personal portfolio with modern UI, smooth animations, and optimized performance.",
             tech: ["React", "Tailwind", "Framer Motion"],
-            gradient: "from-green-600 to-emerald-600",
-            icon: "✨",
+            icon: <FiMonitor />,
             github: "https://github.com/vikkyrg/my-portfolio"
         },
     ];
 
     return (
         <FadeIn>
-            <section id="projects" className="py-32 px-6 relative">
-                <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-5xl font-bold mb-4">
-                        <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <section id="projects" className="py-24 md:py-32 px-4 sm:px-6 relative z-20">
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-16 sm:mb-20 flex flex-col items-center">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F9FAFB] tracking-tight">
                             Featured Projects
-                        </span>
-                    </h2>
+                        </h2>
+                        <div className="w-12 h-1.5 bg-cyan-500 mt-5 mb-5 rounded-full" />
+                        <p className="text-[#9CA3AF] text-base sm:text-lg max-w-2xl mx-auto font-light">
+                            Full-stack projects built using the MERN stack.
+                        </p>
+                    </div>
 
-                    <p className="text-gray-400 text-lg mb-16">
-                        Full-stack projects built using the MERN stack.
-                    </p>
-
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projects.map((project, index) => (
                             <div
                                 key={project.title}
-                                className="group relative animate-fade-in-up"
-                                style={{ animationDelay: `${index * 200}ms` }}
+                                className="group relative bg-[#020817] p-8 rounded-3xl border border-[#1E293B] hover:border-cyan-500/30 hover:shadow-md hover:shadow-cyan-500/5 transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col"
                             >
-                                <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+                                {/* Project Icon */}
+                                <div className="text-4xl sm:text-5xl mb-6 text-[#9CA3AF] group-hover:text-cyan-400 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                    {project.icon}
+                                </div>
 
-                                <div className="relative bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 group-hover:border-white/20 transition-all duration-500 transform group-hover:scale-105 group-hover:-translate-y-2 h-full flex flex-col">
+                                <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB] mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                                    {project.title}
+                                </h3>
 
-                                    {/* Project Icon */}
-                                    <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                                        {project.icon}
-                                    </div>
-
-                                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                                        {project.title}
-                                    </h3>
-
-                                    {project.tag && (
-                                        <span className="text-xs text-blue-300 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-inner shadow-white/5">
+                                {project.tag && (
+                                    <div className="mb-4">
+                                        <span className="inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-xl text-xs font-medium border border-cyan-500/20">
                                             Internship Work
                                         </span>
-                                    )}
-
-                                    <p className="text-gray-400 mb-6 flex-grow">
-                                        {project.description}
-                                    </p>
-
-                                    {/* Tech Stack */}
-                                    <div className="flex flex-wrap gap-2 mb-6">
-                                        {project.tech.map(tech => (
-                                            <span
-                                                key={tech}
-                                                className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300 border border-white/10"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
                                     </div>
+                                )}
 
-                                    {/* ✅ Links show ONLY if project has them */}
-                                    {(project.live || project.github) && (
-                                        <div className="flex gap-4 justify-center">
+                                <p className="text-[#9CA3AF] mb-6 flex-grow text-base sm:text-lg leading-relaxed font-light">
+                                    {project.description}
+                                </p>
 
-                                            {project.title === "Portfolio Website" ? (
-                                                <span className="flex items-center gap-1 text-blue-400 font-medium">
-                                                    ● Live on This Page
-                                                </span>
-                                            ) : (
-                                                project.live && (
-                                                    <a
-                                                        href={project.live}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors group/link"
-                                                    >
-                                                        <FiExternalLink className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                                                        Live
-                                                    </a>
-                                                )
-                                            )}
-                                            {project.github && (
+                                {/* Tech Stack */}
+                                <div className="flex flex-wrap gap-2 mb-8 mt-auto">
+                                    {project.tech.map(tech => (
+                                        <span
+                                            key={tech}
+                                            className="px-3.5 py-1.5 bg-[#020817] rounded-xl text-sm font-medium text-[#9CA3AF] border border-[#1E293B]"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Links */}
+                                {(project.live || project.github) && (
+                                    <div className="flex gap-4 pt-6 border-t border-[#1E293B]">
+                                        {project.title === "Portfolio Website" ? (
+                                            <span className="flex items-center gap-2 text-cyan-400 text-sm font-medium">
+                                                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                                                Live on This Page
+                                            </span>
+                                        ) : (
+                                            project.live && (
                                                 <a
-                                                    href={project.github}
+                                                    href={project.live}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="flex items-center gap-1 text-gray-400 hover:text-white transition-colors group/link"
+                                                    className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium group/link"
                                                 >
-                                                    <FiGithub className="group-hover/link:rotate-12 transition-transform" />
-                                                    Code
+                                                    <FiExternalLink className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                                                    Live Preview
                                                 </a>
-                                            )}
-
-                                        </div>
-                                    )}
-
-                                </div>
+                                            )
+                                        )}
+                                        {project.github && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-1.5 text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors text-sm font-medium group/link ml-auto"
+                                            >
+                                                <FiGithub className="group-hover/link:rotate-12 transition-transform" />
+                                                Source Code
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

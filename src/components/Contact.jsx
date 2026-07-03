@@ -40,63 +40,70 @@ const sendEmail = (e) => {
 
   return (
   <FadeIn>
-  <section id="contact" className="py-32 px-6 relative">
-    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 relative z-20">
+    
+    {/* SECTION HEADER */}
+    <div className="max-w-7xl mx-auto relative z-10 mb-16 sm:mb-20 flex flex-col items-center text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F9FAFB] tracking-tight">
+        Contact
+      </h2>
+      <div className="w-12 h-1.5 bg-cyan-500 mt-5 rounded-full" />
+    </div>
+
+    <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
     {/* LEFT SIDE — LET'S CONNECT */}
-    <div className="relative group">
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl blur-2xl opacity-25 group-hover:opacity-50 transition duration-1000 animate-gradient" />
-      
-      <div className="relative bg-gray-900/50 backdrop-blur-xl p-12 rounded-3xl border border-white/10">
+    <div className="relative">
+      <div className="bg-[#020817] p-8 sm:p-10 md:p-12 rounded-3xl border border-[#1E293B]">
         
-        <h2 className="text-5xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <div className="mb-10">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#F9FAFB]">
             Let's Connect
-          </span>
-        </h2>
+          </h3>
+        </div>
 
-        <p className="text-gray-400 text-lg mb-12 max-w-2xl">
+        <p className="text-[#9CA3AF] text-base sm:text-lg mb-12 max-w-prose font-light leading-relaxed">
           Feel free to reach out for collaborations, opportunities, or just a friendly chat about tech!
         </p>
 
         {/* Contact Info Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           
           <a 
             href="mailto:rvikky05@gmail.com"
-            className="flex flex-col items-center p-6 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+            className="flex flex-col items-center p-6 rounded-2xl bg-[#020817] border border-[#1E293B] hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300 transform hover:-translate-y-1 group"
           >
-            <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-600/30 transition-colors">
-              <FiMail className="text-blue-400 text-xl" />
+            <div className="w-12 h-12 bg-[#020817] border border-[#1E293B] rounded-2xl flex items-center justify-center mb-4 group-hover:border-cyan-500/30 transition-colors shadow-sm">
+              <FiMail className="text-[#9CA3AF] group-hover:text-cyan-400 text-xl transition-colors" />
             </div>
-            <span className="text-white group-hover:text-blue-400 transition-colors">Gmail</span>
-            <span className="text-sm text-gray-400 mt-1">rvikky05@gmail.com</span>
+            <span className="text-[#F9FAFB] font-medium group-hover:text-cyan-400 transition-colors text-sm mb-1">Email</span>
+            <span className="text-xs text-[#9CA3AF]">rvikky05@gmail.com</span>
           </a>
 
           <a 
             href="https://github.com/vikkyrg"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+            className="flex flex-col items-center p-6 rounded-2xl bg-[#020817] border border-[#1E293B] hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300 transform hover:-translate-y-1 group"
           >
-            <div className="w-12 h-12 bg-purple-600/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-purple-600/30 transition-colors">
-              <FiGithub className="text-purple-400 text-xl" />
+            <div className="w-12 h-12 bg-[#020817] border border-[#1E293B] rounded-2xl flex items-center justify-center mb-4 group-hover:border-cyan-500/30 transition-colors shadow-sm">
+              <FiGithub className="text-[#9CA3AF] group-hover:text-cyan-400 text-xl transition-colors" />
             </div>
-            <span className="text-white group-hover:text-purple-400 transition-colors">GitHub</span>
-            <span className="text-sm text-gray-400 mt-1">@vikkyrg</span>
+            <span className="text-[#F9FAFB] font-medium group-hover:text-cyan-400 transition-colors text-sm mb-1">GitHub</span>
+            <span className="text-xs text-[#9CA3AF]">@vikkyrg</span>
           </a>
 
           <a 
             href="https://www.linkedin.com/in/vignesh-r-a634a2293/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center p-6 rounded-xl bg-white/5 border border-white/10 hover:border-pink-500/50 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+            className="flex flex-col items-center p-6 rounded-2xl bg-[#020817] border border-[#1E293B] hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300 transform hover:-translate-y-1 group sm:col-span-2 lg:col-span-1"
           >
-            <div className="w-12 h-12 bg-pink-600/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-pink-600/30 transition-colors">
-              <FiLinkedin className="text-pink-400 text-xl" />
+            <div className="w-12 h-12 bg-[#020817] border border-[#1E293B] rounded-2xl flex items-center justify-center mb-4 group-hover:border-cyan-500/30 transition-colors shadow-sm">
+              <FiLinkedin className="text-[#9CA3AF] group-hover:text-cyan-400 text-xl transition-colors" />
             </div>
-            <span className="text-white group-hover:text-pink-400 transition-colors">LinkedIn</span>
-            <span className="text-sm text-gray-400 mt-1">Vignesh R</span>
+            <span className="text-[#F9FAFB] font-medium group-hover:text-cyan-400 transition-colors text-sm mb-1">LinkedIn</span>
+            <span className="text-xs text-[#9CA3AF]">Vignesh R</span>
           </a>
 
         </div>
@@ -104,97 +111,54 @@ const sendEmail = (e) => {
     </div>
 
     {/* RIGHT SIDE — CONTACT FORM */}
-    <div className="relative group">
-      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur-2xl opacity-25 group-hover:opacity-50 transition duration-1000 animate-gradient" />
-
-      <div className="relative bg-gray-900/50 backdrop-blur-xl p-12 rounded-3xl border border-white/10">
+    <div className="relative">
+      <div className="bg-[#020817] p-8 sm:p-10 md:p-12 rounded-3xl border border-[#1E293B]">
         
-        <h3 className="text-4xl font-bold mb-8">
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-            Send a Message
-          </span>
+        <h3 className="text-2xl sm:text-3xl font-bold text-[#F9FAFB] mb-8">
+          Send a Message
         </h3>
 
-        {/* Enhanced Status Messages with Animations */}
+        {/* Status Messages */}
         {status && (
           <div
-            className={`mb-8 rounded-2xl border-2 overflow-hidden relative animate-slideIn
-              ${
-                status === "success"
-                  ? "bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-green-500/30"
-                  : "bg-gradient-to-br from-red-500/20 to-rose-500/20 border-red-500/30"
-              }`}
+            className={`mb-8 p-5 rounded-2xl border transition-all duration-300 ${
+              status === "success"
+                ? "bg-[#020817] border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
+                : "bg-[#020817] border-red-500/30 shadow-[0_0_20px_rgba(239,68,68,0.1)]"
+            }`}
           >
-            {/* Glass morphism effect */}
-            <div className="absolute inset-0 backdrop-blur-xl" />
-            
-            {/* Content */}
-            <div className="relative p-6">
-              <div className="flex items-start gap-4">
-                {/* Animated Icons */}
-                <div className="relative">
-                  {status === "success" ? (
-                    <>
-                      <FiCheckCircle className="text-4xl text-green-400 animate-bounce" />
-                      <div className="absolute inset-0 bg-green-400/30 rounded-full animate-ping" />
-                    </>
-                  ) : (
-                    <>
-                      <FiXCircle className="text-4xl text-red-400 animate-shake" />
-                      <div className="absolute inset-0 bg-red-400/30 rounded-full animate-ping" />
-                    </>
-                  )}
-                </div>
-                
-                {/* Detailed Messages */}
-                <div className="flex-1">
-                  {status === "success" ? (
-                    <>
-                      <h4 className="text-green-400 font-bold text-lg mb-2">
-                        Message Sent Successfully! 🎉
-                      </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        Thank you for reaching out! I've received your message and will get back to you within 24 hours. 
-                        You can also connect with me on social media for faster responses.
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <h4 className="text-red-400 font-bold text-lg mb-2">
-                        Oops! Something Went Wrong 😕
-                      </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        We couldn't send your message. Please try again in a few moments, 
-                        or reach out directly at{' '}
-                        <a href="mailto:rvikky05@gmail.com" className="text-pink-400 hover:underline">
-                          rvikky05@gmail.com
-                        </a>
-                      </p>
-                    </>
-                  )}
-                </div>
+            <div className="flex items-center gap-4">
+              <div className={`shrink-0 w-12 h-12 rounded-2xl border flex items-center justify-center ${status === "success" ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-red-500/10 border-red-500/20 text-red-400"}`}>
+                {status === "success" ? (
+                  <FiCheckCircle className="text-2xl" />
+                ) : (
+                  <FiXCircle className="text-2xl" />
+                )}
+              </div>
+              <div>
+                {status === "success" ? (
+                  <>
+                    <h4 className="text-[#F9FAFB] font-medium text-base">Message Sent Successfully</h4>
+                    <p className="text-sm text-[#9CA3AF] mt-1 font-light">Thank you! I'll get back to you shortly.</p>
+                  </>
+                ) : (
+                  <>
+                    <h4 className="text-[#F9FAFB] font-medium text-base">Something Went Wrong</h4>
+                    <p className="text-sm text-[#9CA3AF] mt-1 font-light">Please try again or email me directly.</p>
+                  </>
+                )}
               </div>
             </div>
-
-            {/* Progress Bar that disappears after 5 seconds */}
-            <div 
-              className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r 
-                ${status === "success" 
-                  ? "from-green-400 to-emerald-400" 
-                  : "from-red-400 to-rose-400"
-                } animate-progress`}
-              style={{ width: '100%' }}
-            />
           </div>
         )}
 
-        <form ref={form} onSubmit={sendEmail} className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-5">
           <input
             type="text"
             name="user_name"
             placeholder="Your Name"
             required
-            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all duration-300"
+            className="w-full p-4 rounded-xl bg-[#020817] border border-[#1E293B] text-[#F9FAFB] placeholder-[#64748B] focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all duration-300"
           />
 
           <input
@@ -202,7 +166,7 @@ const sendEmail = (e) => {
             name="user_email"
             placeholder="Your Email"
             required
-            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all duration-300"
+            className="w-full p-4 rounded-xl bg-[#020817] border border-[#1E293B] text-[#F9FAFB] placeholder-[#64748B] focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all duration-300"
           />
 
           <textarea
@@ -210,13 +174,13 @@ const sendEmail = (e) => {
             name="message"
             placeholder="Your Message"
             required
-            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all duration-300 resize-none"
+            className="w-full p-4 rounded-xl bg-[#020817] border border-[#1E293B] text-[#F9FAFB] placeholder-[#64748B] focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all duration-300 resize-none"
           />
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold tracking-wide hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-purple-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-4 rounded-xl bg-cyan-600 text-white font-medium hover:bg-cyan-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border border-cyan-500/50 shadow-sm"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
@@ -225,42 +189,6 @@ const sendEmail = (e) => {
     </div>
 
     </div>
-
-    <style jsx>{`
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-      }
-      
-      @keyframes progress {
-        0% { width: 100%; }
-        100% { width: 0%; }
-      }
-      
-      .animate-slideIn {
-        animation: slideIn 0.5s ease-out;
-      }
-      
-      .animate-shake {
-        animation: shake 0.8s ease-in-out;
-      }
-      
-      .animate-progress {
-        animation: progress 5s linear forwards;
-      }
-    `}</style>
   </section>
   </FadeIn>
  );
