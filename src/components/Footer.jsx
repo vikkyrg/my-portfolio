@@ -245,7 +245,7 @@ function Footer() {
                 <li key={link.href}>
                   <a 
                     href={link.href}
-                    className="group flex items-center gap-2 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300 text-base font-medium"
+                    className="group inline-flex w-fit md:flex md:w-auto items-center gap-2 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300 text-base font-medium"
                     onClick={(e) => {
                       e.preventDefault();
                       document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -270,7 +270,7 @@ function Footer() {
               <li>
                 <a 
                   href="mailto:rvikky05@gmail.com"
-                  className="group flex items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
+                  className="group inline-flex w-fit md:flex md:w-auto items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#020817] border border-[#1E293B] flex items-center justify-center group-hover:border-cyan-500/50 group-hover:bg-cyan-500/5 transition-all">
                     <FiMail className="text-[#9CA3AF] group-hover:text-cyan-400 text-base transition-colors" />
@@ -284,7 +284,7 @@ function Footer() {
                   href="https://github.com/vikkyrg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
+                  className="group inline-flex w-fit md:flex md:w-auto items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#020817] border border-[#1E293B] flex items-center justify-center group-hover:border-cyan-500/50 group-hover:bg-cyan-500/5 transition-all">
                     <FiGithub className="text-[#9CA3AF] group-hover:text-cyan-400 text-base transition-colors" />
@@ -298,7 +298,7 @@ function Footer() {
                   href="https://www.linkedin.com/in/vignesh-r-a634a2293/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
+                  className="group inline-flex w-fit md:flex md:w-auto items-center gap-3 text-[#9CA3AF] hover:text-cyan-400 transition-colors duration-300"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#020817] border border-[#1E293B] flex items-center justify-center group-hover:border-cyan-500/50 group-hover:bg-cyan-500/5 transition-all">
                     <FiLinkedin className="text-[#9CA3AF] group-hover:text-cyan-400 text-base transition-colors" />
