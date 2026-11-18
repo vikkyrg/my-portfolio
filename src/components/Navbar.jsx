@@ -4,6 +4,7 @@ import { FiMenu, FiX, FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiBriefcase,
 const navItems = [
   { href: "#home", label: "Home", icon: FiHome },
   { href: "#about", label: "About", icon: FiUser },
+  { href: "#experience", label: "Experience", icon: FiBriefcase },
   { href: "#skills", label: "Skills", icon: FiCode },
   { href: "#projects", label: "Projects", icon: FiBriefcase },
   { href: "#contact", label: "Contact", icon: FiMail }

@@ -2,7 +2,7 @@ import {
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaGitAlt, FaNpm, FaJs 
 } from "react-icons/fa";
 import { 
-  SiTailwindcss, SiExpress, SiMongodb, SiVercel 
+  SiTailwindcss, SiExpress, SiMongodb, SiVercel, SiFirebase 
 } from "react-icons/si";
 import { 
   FiMonitor, FiServer, FiDatabase, FiTool, FiLayout, FiLayers, FiBox, 
@@ -14,7 +14,7 @@ function Skills() {
   const categories = [
     {
       title: "Frontend Development",
-      icon: <FiMonitor className="text-cyan-400" />,
+      icon: <FiMonitor className="text-[#0092B8]" />,
       skills: [
         { name: "React.js", icon: <FaReact /> },
         { name: "JavaScript (ES6+)", icon: <FaJs /> },
@@ -27,7 +27,7 @@ function Skills() {
     },
     {
       title: "Backend Development",
-      icon: <FiServer className="text-cyan-400" />,
+      icon: <FiServer className="text-[#0092B8]" />,
       skills: [
         { name: "Node.js", icon: <FaNodeJs /> },
         { name: "Express.js", icon: <SiExpress /> },
@@ -35,11 +35,12 @@ function Skills() {
         { name: "JWT Authentication", icon: <FiKey /> },
         { name: "Socket.IO", icon: <FiRadio /> },
         { name: "MVC Architecture", icon: <FiLayers /> },
+        { name: "Firebase", icon: <SiFirebase /> },
       ]
     },
     {
       title: "Database",
-      icon: <FiDatabase className="text-cyan-400" />,
+      icon: <FiDatabase className="text-[#0092B8]" />,
       skills: [
         { name: "MongoDB", icon: <SiMongodb /> },
         { name: "Mongoose", icon: <FiDatabase /> },
@@ -49,7 +50,7 @@ function Skills() {
     },
     {
       title: "Tools & Deployment",
-      icon: <FiTool className="text-cyan-400" />,
+      icon: <FiTool className="text-[#0092B8]" />,
       skills: [
         { name: "Git", icon: <FaGitAlt /> },
         { name: "GitHub", icon: <FaGithub /> },
@@ -64,7 +65,9 @@ function Skills() {
 
   return (
     <FadeIn>
-      <section id="skills" className="py-24 md:py-32 px-4 sm:px-6 relative z-20">
+      <section id="skills" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden">
+        {/* Glow orb decoration from Moula */}
+        <div className="absolute top-1/4 left-1/3 w-80 h-80 rounded-full bg-emerald-500/10 glow-orb animate-float-slow pointer-events-none" />
         
         {/* Soft Radial Glow Background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] max-w-full bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -87,26 +90,26 @@ function Skills() {
             {categories.map((cat, i) => (
               <div 
                 key={i} 
-                className="bg-[#020817]/80 backdrop-blur-sm border border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-cyan-500/5 hover:-translate-y-1 hover:border-cyan-500/30 transition-all duration-300 h-full flex flex-col"
+                className="bg-[rgba(5,12,24,0.84)] backdrop-blur-[8px] border border-[#0092B8]/20 rounded-3xl p-6 sm:p-8 transition-colors duration-300 hover:border-[#0092B8]/45 h-full flex flex-col"
               >
                 
                 {/* Card Header (Icon, Title, Divider) */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 bg-[#020817] border border-[#1E293B] rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                  <div className="w-12 h-12 bg-[#0092B8]/[0.08] border border-[#0092B8]/25 rounded-2xl flex items-center justify-center shrink-0">
                     <span className="text-xl">{cat.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#F9FAFB] shrink-0">{cat.title}</h3>
-                  <div className="h-px bg-[#1E293B] flex-grow ml-2 sm:ml-4 rounded-full" />
+                  <h3 className="text-xl font-bold text-white shrink-0">{cat.title}</h3>
+                  <div className="h-px bg-white/[0.08] flex-grow ml-2 sm:ml-4 rounded-full" />
                 </div>
 
                 {/* Technology Pills */}
                 <div className="flex flex-wrap gap-3">
                   {cat.skills.map((skill, j) => (
-                    <div 
-                      key={j} 
-                      className="group/pill flex items-center gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 bg-[#020817] border border-[#1E293B] rounded-xl cursor-default transition-all duration-300 hover:scale-105 hover:border-cyan-500/50 hover:bg-cyan-500/5 hover:shadow-[0_0_15px_rgba(6,182,212,0.15)]"
+                    <div
+                      key={j}
+                      className="group/pill flex items-center gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 bg-[rgba(5,12,24,0.78)] border border-[#0092B8]/15 rounded-xl cursor-default backdrop-blur-[8px] transition duration-300 hover:-translate-y-0.5 hover:border-[#0092B8]/40 hover:bg-[rgba(5,12,24,0.84)]"
                     >
-                      <div className="text-[#9CA3AF] group-hover/pill:text-cyan-400 group-hover/pill:rotate-12 transition-all duration-300 text-lg">
+                      <div className="text-[#9CA3AF] group-hover/pill:text-[#0092B8] transition-colors duration-300 text-lg">
                         {skill.icon}
                       </div>
                       <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] group-hover/pill:text-[#F9FAFB] transition-colors duration-300">

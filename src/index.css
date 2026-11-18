@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@utility glow-orb {
+  filter: blur(80px);
+  opacity: 0.15;
+  mix-blend-mode: plus-lighter;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg) scale(1.03);
+  }
+}
+
+@keyframes float-delay {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(25px) rotate(-5deg) scale(0.97);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-delay 15s ease-in-out infinite;
+}
+
 html, body {
   scroll-behavior: smooth;
   background: #020617;
@@ -12,6 +44,7 @@ html, body {
   min-height: 100vh;
   background: #020617;
 }
+
 @keyframes spin-slow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

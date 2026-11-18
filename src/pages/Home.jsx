@@ -1,4 +1,5 @@
 import Background from "../components/Background";
+import ThreeDCanvas from "../components/ThreeDCanvas";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Internship from "../components/Internship";
@@ -10,6 +11,7 @@ function Home() {
   return (
     <div className="relative">
       <Background />
+      <ThreeDCanvas />
       <Hero />
       <About />
       <Internship />
