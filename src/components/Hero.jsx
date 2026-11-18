@@ -6,7 +6,11 @@ function Hero() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    const animationFrameId = window.requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+
+    return () => window.cancelAnimationFrame(animationFrameId);
   }, []);
 
   // Canvas Interactive Signature Effect (Constellation)
@@ -26,13 +30,14 @@ function Hero() {
     let mouse = { x: -1000, y: -1000, radius: 180 }; // Increased radius for better presence
 
     const init = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const bounds = section.getBoundingClientRect();
+      width = Math.round(bounds.width);
+      height = Math.round(bounds.height);
       canvas.width = width;
       canvas.height = height;
 
       // Adaptive particle count based on screen size for mobile performance
-      const particleCount = width < 768 ? 40 : 80;
+      const particleCount = width < 768 ? 46 : 92;
       particles = [];
 
       for (let i = 0; i < particleCount; i++) {
@@ -41,7 +46,7 @@ function Hero() {
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.4,
           vy: (Math.random() - 0.5) * 0.4,
-          radius: Math.random() * 1.5 + 0.5,
+          radius: Math.random() * 1.8 + 0.6,
         });
       }
     };
@@ -51,7 +56,7 @@ function Hero() {
       ctx.fillStyle = "#020817"; 
       ctx.fillRect(0, 0, width, height);
 
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = 0.6;
 
       // Update and draw particles
       for (let i = 0; i < particles.length; i++) {
@@ -78,7 +83,7 @@ function Hero() {
           const dist = dx * dx + dy * dy;
 
           if (dist < 12000) {
-            ctx.strokeStyle = `rgba(156, 163, 175, ${0.15 - dist / 80000})`;
+            ctx.strokeStyle = `rgba(156, 163, 175, ${(0.15 - dist / 80000) * 1.2})`;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -114,7 +119,7 @@ function Hero() {
           
           // Reset shadow and line width for other particles
           ctx.shadowBlur = 0;
-          ctx.lineWidth = 0.5;
+          ctx.lineWidth = 0.6;
         }
       }
 
@@ -186,13 +191,12 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative z-10 min-h-screen flex items-center justify-center bg-[#020817] pt-20 sm:pt-24 md:pt-24 lg:pt-28 pb-16 md:pb-0"
+      className="relative z-10 min-h-[100svh] md:min-h-screen flex items-center justify-center bg-[#020817] pt-20 sm:pt-24 md:pt-24 lg:pt-28 pb-16 md:pb-0"
     >
       {/* Signature Interactive Canvas Effect */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ touchAction: "none" }}
+        className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
       {/* Soft Radial Glow Background - matching Skills section */}
@@ -215,17 +219,16 @@ function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F9FAFB] leading-[1.1]">
             MERN Stack Developer
             <span className="block text-[#4F8EF7] mt-3">
-              Developing Web Applications
+              Building Modern Web Applications
             </span>
           </h1>
 
           <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-[#9CA3AF] max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
-            Entry-level MERN Stack Developer building scalable web applications
-            using React, Node.js, Express, and MongoDB.
+            I'm a passionate full-stack developer specializing in the MERN stack, focused on building responsive, scalable, and user-friendly web applications. I turn ideas into functional digital experiences using modern web technologies.
           </p>
 
           {/* CTA Buttons - Updated with Skills section styling */}
-          <div className="mt-8 sm:mt-10 flex flex-row gap-3 sm:gap-4 justify-center md:justify-start w-full">
+          <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start w-full">
             <a
               href="/Vignesh_Resume.pdf"
               download="Vignesh_Resume.pdf"
@@ -241,7 +244,7 @@ function Hero() {
               className="group min-h-[48px] sm:min-h-[60px] inline-flex items-center justify-center gap-2 sm:gap-3 px-4 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold border border-[#1E293B] text-[#F9FAFB] bg-[#020817]/80 backdrop-blur-sm rounded-lg hover:border-cyan-500/50 hover:bg-cyan-500/5 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#1E293B] focus:ring-offset-2 focus:ring-offset-[#020817] touch-manipulation hover:scale-105 whitespace-nowrap"
               style={{ WebkitTapHighlightColor: "transparent" }}
             >
-              View Work
+              View Projects
               <FiArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -259,7 +262,8 @@ function Hero() {
                 src="/profile.jpeg"
                 alt="Vikky"
                 className="w-full h-full object-cover object-top select-none"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

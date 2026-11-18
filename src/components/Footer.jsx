@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { FiMail, FiGithub, FiLinkedin, FiHeart, FiArrowUp } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin, FiArrowUp } from "react-icons/fi";
 import FadeIn from "./FadeIn";
 
 function Footer() {
@@ -7,10 +7,17 @@ function Footer() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    let isVisible = false;
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500);
+      const nextIsVisible = window.scrollY > 500;
+      if (nextIsVisible !== isVisible) {
+        isVisible = nextIsVisible;
+        setShowScrollTop(nextIsVisible);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

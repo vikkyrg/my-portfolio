@@ -52,7 +52,7 @@ const infoCards = [
 function About() {
   return (
     <FadeIn>
-      <section id="about" className="relative z-20 overflow-hidden px-4 pb-24 pt-20 md:pt-32 md:pb-40 sm:px-6">
+      <section id="about" className="relative z-20 scroll-mt-24 overflow-hidden px-4 pb-24 pt-20 md:pt-32 md:pb-40 sm:px-6">
         <div className="absolute top-1/2 left-0 h-80 w-80 rounded-full bg-[#0092B8]/10 glow-orb animate-float-slow pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-7xl">

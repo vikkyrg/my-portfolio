@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiHome, FiUser, FiCode, FiBriefcase, FiMail } from 'react-icons/fi';
 
 const navItems = [
@@ -14,34 +14,45 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const activeSectionRef = useRef('home');
 
   useEffect(() => {
-    let ticking = false;
+    let frameId = null;
+    let lastIsScrolled = null;
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+      if (frameId !== null) return;
 
-          const sections = navItems.map(item => item.label.toLowerCase());
-          for (const section of sections) {
-            const element = document.getElementById(section);
-            if (element) {
-              const rect = element.getBoundingClientRect();
-              if (rect.top <= 150 && rect.bottom >= 150) {
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        const nextIsScrolled = window.scrollY > 20;
+        if (nextIsScrolled !== lastIsScrolled) {
+          lastIsScrolled = nextIsScrolled;
+          setIsScrolled(nextIsScrolled);
+        }
+
+        for (const item of navItems) {
+          const section = item.label.toLowerCase();
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 150 && rect.bottom >= 150) {
+              if (section !== activeSectionRef.current) {
+                activeSectionRef.current = section;
                 setActiveSection(section);
-                break;
               }
+              break;
             }
           }
-          ticking = false;
-        });
-        ticking = true;
-      }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   useEffect(() => {
@@ -55,10 +66,12 @@ function Navbar() {
 
   const scrollToSection = useCallback((e, href, section) => {
     e.preventDefault();
+    if (isOpen) document.body.style.overflow = 'unset';
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    activeSectionRef.current = section;
     setActiveSection(section);
     setIsOpen(false);
-  }, []);
+  }, [isOpen]);
 
   return (
     <nav

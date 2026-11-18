@@ -40,7 +40,7 @@ const sendEmail = (e) => {
 
   return (
   <FadeIn>
-  <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden">
+  <section id="contact" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden scroll-mt-24">
     {/* Background visual orb */}
     <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-[#0092B8]/10 glow-orb animate-float-slow pointer-events-none" />
     

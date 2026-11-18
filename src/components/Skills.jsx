@@ -65,7 +65,7 @@ function Skills() {
 
   return (
     <FadeIn>
-      <section id="skills" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden">
+      <section id="skills" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden scroll-mt-24">
         {/* Glow orb decoration from Moula */}
         <div className="absolute top-1/4 left-1/3 w-80 h-80 rounded-full bg-emerald-500/10 glow-orb animate-float-slow pointer-events-none" />
         

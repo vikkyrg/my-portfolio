@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { FiExternalLink, FiGithub, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import resumeImg from "../assets/resume.png";
 import collabImg from "../assets/collabboard.png";
@@ -18,16 +18,9 @@ import FadeIn from "./FadeIn";
 
 function Projects() {
     const [showAll, setShowAll] = useState(false);
-    const isFirstRender = useRef(true);
 
-    useEffect(() => {
-        if (isFirstRender.current) {
-            isFirstRender.current = false;
-            return;
-        }
-
-        if (!showAll) {
-            // Use requestAnimationFrame to ensure layout reflow has occurred after collapsing
+    const handleToggleProjects = () => {
+        if (showAll) {
             requestAnimationFrame(() => {
                 const section = document.getElementById("projects");
                 if (section) {
@@ -38,26 +31,27 @@ function Projects() {
                 }
             });
         }
-    }, [showAll]);
+        setShowAll(prev => !prev);
+    };
 
     const projects = [
         {
-            title: "Resume Generator",
-            description: "Built a full-stack resume builder with dynamic form handling, real-time preview, and PDF export using React, Node.js, Express, and MongoDB.",
-            tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-            image: resumeImg,
-            category: "FULL STACK / RESUME BUILDER",
-            live: "https://resume-generator-opal-eta.vercel.app/",
-            github: "https://github.com/vikkyrg/resume-generator"
+            title: "FinAdvise Loans",
+            description: "A loan consultation platform helping users explore personal loans, home loans, business loans, gold loans, and loans against property with online enquiry facilities.",
+            tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+            image: finadviseImg,
+            category: "FINTECH / LOAN CONSULTATION PLATFORM",
+            live: "https://fin-client-five.vercel.app/",
+            github: "https://github.com/vikkyrg/fin-client"
         },
         {
-            title: "CollabBoard SaaS",
-            description: "Built a real-time collaboration platform with collaborative whiteboard, chat, video calling, AI assistance, and secure room-based collaboration.",
-            tech: ["React", "Node.js", "Express.js", "Socket.IO", "MongoDB", "Fabric.js", "JWT", "Agora"],
-            image: collabImg,
-            category: "SAAS / REAL-TIME COLLABORATION",
-            live: "https://collabboard-saas.vercel.app/",
-            github: "https://github.com/vikkyrg/CollabBoard-SaaS"
+            title: "AutoOps School",
+            description: "An online IT learning platform offering practical technology training, structured learning paths, hands-on projects, and career preparation for aspiring developers.",
+            tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript"],
+            image: autoopsImg,
+            category: "EDTECH / LEARNING PLATFORM",
+            live: "https://lms-client-gray-six.vercel.app/",
+            github: "https://github.com/vikkyrg/lms-client"
         },
         {
             title: "Admin Dashboard",
@@ -67,15 +61,6 @@ function Projects() {
             tag: "Internship Work",
             category: "INTERNSHIP / ADMIN PANEL",
             github: "https://github.com/innomatricstech/EnjoyHolidays-Admin"
-        },
-        {
-            title: "Portfolio Website",
-            description: "Designed and developed a responsive personal portfolio with modern UI, smooth animations, and optimized performance.",
-            tech: ["React", "Tailwind CSS", "Framer Motion"],
-            image: portfolioImg,
-            category: "FRONTEND / PORTFOLIO",
-            isCurrentSite: true,
-            github: "https://github.com/vikkyrg/my-portfolio"
         },
         {
             title: "Party House",
@@ -96,13 +81,31 @@ function Projects() {
             github: "https://github.com/moula2002/Hi-techestates"
         },
         {
-            title: "AutoOps School",
-            description: "An online IT learning platform offering practical technology training, structured learning paths, hands-on projects, and career preparation for aspiring developers.",
-            tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript"],
-            image: autoopsImg,
-            category: "EDTECH / LEARNING PLATFORM",
-            live: null,
-            github: null
+            title: "High Pressure Sump & Tank Cleaning Services",
+            description: "A professional cleaning services website showcasing high-pressure sump and water tank cleaning, UV sterilization, deep cleaning processes, and online service enquiry facilities.",
+            tech: ["React.js", "JavaScript", "Tailwind CSS"],
+            image: hipressureImg,
+            category: "SERVICE BUSINESS WEBSITE",
+            live: "https://water-eight-lime.vercel.app/",
+            github: "https://github.com/vikkyrg/water"
+        },
+        {
+            title: "Resume Generator",
+            description: "Built a full-stack resume builder with dynamic form handling, real-time preview, and PDF export using React, Node.js, Express, and MongoDB.",
+            tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+            image: resumeImg,
+            category: "FULL STACK / RESUME BUILDER",
+            live: "https://resume-generator-opal-eta.vercel.app/",
+            github: "https://github.com/vikkyrg/resume-generator"
+        },
+        {
+            title: "CollabBoard SaaS",
+            description: "Built a real-time collaboration platform with collaborative whiteboard, chat, video calling, AI assistance, and secure room-based collaboration.",
+            tech: ["React", "Node.js", "Express.js", "Socket.IO", "MongoDB", "Fabric.js", "JWT", "Agora"],
+            image: collabImg,
+            category: "SAAS / REAL-TIME COLLABORATION",
+            live: "https://collabboard-saas.vercel.app/",
+            github: "https://github.com/vikkyrg/CollabBoard-SaaS"
         },
         {
             title: "Navadurga Electricals",
@@ -112,15 +115,6 @@ function Projects() {
             category: "ELECTRICAL SERVICES WEBSITE",
             live: "https://nava-durga-electricals-website.vercel.app/",
             github: "https://github.com/moula2002/NavaDurga-Electricals-website"
-        },
-        {
-            title: "Nrityadegula – School of Dance",
-            description: "A traditional dance academy website highlighting dance education, cultural heritage, achievements, training programs, events, and artistic performances.",
-            tech: ["React.js", "JavaScript", "Tailwind CSS"],
-            image: nrithyadegulaImg,
-            category: "EDUCATION / DANCE ACADEMY",
-            live: "https://nrithya-degula-website.vercel.app/",
-            github: "https://github.com/vikkyrg/nrithya_degula_website"
         },
         {
             title: "AX Aurix Events",
@@ -141,24 +135,6 @@ function Projects() {
             github: "https://github.com/vikkyrg/counciling"
         },
         {
-            title: "High Pressure Sump & Tank Cleaning Services",
-            description: "A professional cleaning services website showcasing high-pressure sump and water tank cleaning, UV sterilization, deep cleaning processes, and online service enquiry facilities.",
-            tech: ["React.js", "JavaScript", "Tailwind CSS"],
-            image: hipressureImg,
-            category: "SERVICE BUSINESS WEBSITE",
-            live: "https://water-eight-lime.vercel.app/",
-            github: "https://github.com/vikkyrg/water"
-        },
-        {
-            title: "FinAdvise Loans",
-            description: "A loan consultation platform helping users explore personal loans, home loans, business loans, gold loans, and loans against property with online enquiry facilities.",
-            tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-            image: finadviseImg,
-            category: "FINTECH / LOAN CONSULTATION PLATFORM",
-            live: "https://fin-client-five.vercel.app/",
-            github: "https://github.com/vikkyrg/fin-client"
-        },
-        {
             title: "AMPSLITE – Premium Wires & Cables",
             description: "A professional corporate website for a premium wires and cables manufacturer, showcasing high-performance electrical wires, cable products, innovative solutions, and company services. Designed to highlight product quality, electrical safety, durability, and superior conductivity.",
             tech: ["React.js", "JavaScript", "Tailwind CSS"],
@@ -167,11 +143,29 @@ function Projects() {
             live: "https://amp-slight-website.vercel.app/",
             github: "https://github.com/moula2002/AMPSlight-website"
         },
+        {
+            title: "Nrityadegula – School of Dance",
+            description: "A traditional dance academy website highlighting dance education, cultural heritage, achievements, training programs, events, and artistic performances.",
+            tech: ["React.js", "JavaScript", "Tailwind CSS"],
+            image: nrithyadegulaImg,
+            category: "EDUCATION / DANCE ACADEMY",
+            live: "https://nrithya-degula-website.vercel.app/",
+            github: "https://github.com/vikkyrg/nrithya_degula_website"
+        },
+        {
+            title: "Portfolio Website",
+            description: "Designed and developed a responsive personal portfolio with modern UI, smooth animations, and optimized performance.",
+            tech: ["React", "Tailwind CSS"],
+            image: portfolioImg,
+            category: "FRONTEND / PORTFOLIO",
+            isCurrentSite: true,
+            github: "https://github.com/vikkyrg/my-portfolio"
+        },
     ];
 
     return (
         <FadeIn>
-            <section id="projects" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden scroll-mt-20">
+            <section id="projects" className="py-24 md:py-32 px-4 sm:px-6 relative z-20 overflow-hidden scroll-mt-24">
                 {/* Background radial glow accents */}
                 <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full bg-[#0092B8]/10 glow-orb animate-float-slow pointer-events-none" />
                 <div className="absolute bottom-10 left-0 w-80 h-80 rounded-full bg-emerald-500/10 glow-orb animate-float-delay pointer-events-none" />
@@ -200,6 +194,8 @@ function Projects() {
                                             src={project.image}
                                             alt={project.title}
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                 ) : (
@@ -289,7 +285,7 @@ function Projects() {
                     <div className="mt-12 sm:mt-16 flex justify-center">
                         <button
                             type="button"
-                            onClick={() => setShowAll(prev => !prev)}
+                            onClick={handleToggleProjects}
                             className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-[rgba(5,12,24,0.84)] border border-[#0092B8]/30 text-white font-medium text-sm sm:text-base backdrop-blur-[8px] transition-all duration-300 hover:border-[#0092B8] hover:bg-[#0092B8]/[0.12] hover:shadow-[0_0_20px_rgba(0,146,184,0.25)] hover:-translate-y-0.5"
                         >
                             <span>{showAll ? "Show Less Projects" : "Explore More Projects"}</span>

@@ -45,7 +45,7 @@ const experiences = [
 function Internship() {
   return (
     <FadeIn>
-      <section id="experience" className="relative z-20 flex w-full scroll-mt-20 flex-col items-center overflow-hidden px-0 pb-24 pt-12 md:pb-32 md:pt-16">
+      <section id="experience" className="relative z-20 flex w-full scroll-mt-24 flex-col items-center overflow-hidden px-0 pb-24 pt-12 md:pb-32 md:pt-16">
         <div className="absolute top-1/2 right-0 h-80 w-80 rounded-full bg-purple-500/10 glow-orb animate-float-delay pointer-events-none" />
 
         <div className="relative z-10 mx-auto w-full max-w-[1000px] px-4 sm:px-5">
